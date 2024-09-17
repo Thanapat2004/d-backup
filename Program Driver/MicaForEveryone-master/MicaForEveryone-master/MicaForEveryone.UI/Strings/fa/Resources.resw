@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>درباره این برنامه</value>
+  </data>
+  <data name="AcrylicBackdropDescription.Text" xml:space="preserve">
+    <value>گزینه «Acrylic» تمام پنجره‌ها را مجبور می‌کند تا از یک جلوه بلور به سبک Windows 10 استفاده کنند.</value>
+  </data>
+  <data name="AcrylicMenuItem.Text" xml:space="preserve">
+    <value>Acrylic</value>
+  </data>
+  <data name="AddButton.Content" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="AddClassRuleContentDialog.Title" xml:space="preserve">
+    <value>نمایه کلاس جدید</value>
+  </data>
+  <data name="AddClassRuleMenuItem.Text" xml:space="preserve">
+    <value>افزودن نمایه کلاس</value>
+  </data>
+  <data name="AddProcessRuleContentDialog.Title" xml:space="preserve">
+    <value>نمایه پروسه جدید</value>
+  </data>
+  <data name="AddProcessRuleMenuItem.Text" xml:space="preserve">
+    <value>افزودن نمایه پروسه</value>
+  </data>
+  <data name="AddRuleAppBarButton.Label" xml:space="preserve">
+    <value>افزودن نمایه</value>
+  </data>
+  <data name="AddRuleDialog.Title" xml:space="preserve">
+    <value>افزودن نمایه</value>
+  </data>
+  <data name="AdvancedMenu.Text" xml:space="preserve">
+    <value>فایل پیکربندی</value>
+  </data>
+  <data name="AppInitializationError.Title" xml:space="preserve">
+    <value>خطا در راه‌اندازی برنامه</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Mica برای همه</value>
+  </data>
+  <data name="AppNameLabel.Text" xml:space="preserve">
+    <value>Mica برای همه</value>
+  </data>
+  <data name="BackdropDescription.Text" xml:space="preserve">
+    <value>تنظیم نوع پس‌زمینه،</value>
+  </data>
+  <data name="BackdropMenu.Text" xml:space="preserve">
+    <value>نوع پس‌زمینه</value>
+  </data>
+  <data name="BackdropTypeSetting.Header" xml:space="preserve">
+    <value>نوع پس‌زمینه</value>
+  </data>
+  <data name="BlurBehindSetting.Description" xml:space="preserve">
+    <value>پنجره‌ها را شفاف و بلوری می‌کند. بعد از غیرفعال کردن این گزینه باید پنجره‌های باز را ببندید و دوباره باز کنید.</value>
+  </data>
+  <data name="BlurBehindSetting.Header" xml:space="preserve">
+    <value>بلور پس‌زمینه</value>
+  </data>
+  <data name="BrowseButton.Content" xml:space="preserve">
+    <value>مرور</value>
+  </data>
+  <data name="CancelButton.Content" xml:space="preserve">
+    <value>لغو</value>
+  </data>
+  <data name="ClassNameSuggestBox.Description" xml:space="preserve">
+    <value>نام کلاس پنجره را وارد کنید.</value>
+  </data>
+  <data name="ClassNameSuggestBox.Header" xml:space="preserve">
+    <value>نام کلاس:</value>
+  </data>
+  <data name="CloseButton.Content" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="ConfigFileError.Content" xml:space="preserve">
+    <value>خطا در فایل پیکربندی:
+{0}
+
+خطا را رفع کنید سپس با استفاده از گزینه «بارگزاری مجدد» فایل پیکربندی را مجددا بارگزاری کنید.</value>
+  </data>
+  <data name="ConfigFileError.Header" xml:space="preserve">
+    <value>خطا در فایل پیکربندی</value>
+  </data>
+  <data name="ConfigFilePathSetting.Description" xml:space="preserve">
+    <value>فایلی که برای ذخیره و بارگذاری نمایه‌ها استفاده می‌شود.</value>
+  </data>
+  <data name="ConfigFilePathSetting.Header" xml:space="preserve">
+    <value>مکان فایل</value>
+  </data>
+  <data name="DarkMenuItem.Text" xml:space="preserve">
+    <value>تیره</value>
+  </data>
+  <data name="DarkTitlebarColorDescription.Text" xml:space="preserve">
+    <value>تیره از تم تاریک استفاده می‌‌کند.</value>
+  </data>
+  <data name="DefaultBackdropDescription.Text" xml:space="preserve">
+    <value>گزینه «پیشفرض» تغییری ایجاد نمی‌کند تا از پس‌زمینه ترجیحی برنامه استفاده شود.</value>
+  </data>
+  <data name="DefaultMenuItem.Text" xml:space="preserve">
+    <value>پیشفرض</value>
+  </data>
+  <data name="DefaultTitlebarColorDescription.Text" xml:space="preserve">
+    <value>گزینه «پیشفرض» طرح پیشفرض برنامه را نگه می‌دارد.</value>
+  </data>
+  <data name="ExitMenuItem.Text" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="ExitSetting.Header" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="ExtendFrameIntoClientAreaSetting.Header" xml:space="preserve">
+    <value>گسترش قاب پنجره به Client Area</value>
+  </data>
+  <data name="ExtendFrameIntoClientAreaSetting.Description" xml:space="preserve">
+    <value>قاب پنجره را گسترش می‌دهد تا طرح پس‌زمینه روی پس‌زمینه پنجره هم نمایان شود. این گزینه روی تمام برنامه‌ها کار نمی‌کند و ممکن است عملکرد برنامه‌ها را دچار اختلال کند، تنها درصورتی از آن استفاده کنید که می‌دانید چه می‌کنید. غیرفعال کردن این گزینه نیاز دارد تا پنجره‌های باز را ببندید و دوباره باز کنید.</value>
+  </data>
+  <data name="GeneralPaneItem.Text" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="GeneralSetting.Header" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="GitHubButton.Content" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="GlobalRulePaneItem.Text" xml:space="preserve">
+    <value>نمایه پیشفرض</value>
+  </data>
+  <data name="LanguageSetting.Description" xml:space="preserve">
+    <value>زبان ترجیحی برای رابط کاربری برنامه را انتخاب کنید. لازم است برنامه را مجدد راه‌اندازی کنید.</value>
+  </data>
+  <data name="LanguageSetting.Header" xml:space="preserve">
+    <value>زبان</value>
+  </data>
+  <data name="LightMenuItem.Text" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="LightTitlebarColorDescription.Text" xml:space="preserve">
+    <value>روشن از تم روشن استفاده می‌کند.</value>
+  </data>
+  <data name="MicaBackdropDescription.Text" xml:space="preserve">
+    <value>گزینه «Mica» تمام پنجره‌ها را مجبور می‌کند تا از جلوه رنگی طرح Windows 11 استفاده کنند.</value>
+  </data>
+  <data name="MicaMenuItem.Text" xml:space="preserve">
+    <value>Mica</value>
+  </data>
+  <data name="NoneBackdropDescription.Text" xml:space="preserve">
+    <value>جلوه پس‌زمینه را غیرفعال می‌کند، حتی روی برنامه‌هایی که از آن پشتیبانی می‌کنند.</value>
+  </data>
+  <data name="NoneMenuItem.Text" xml:space="preserve">
+    <value>هیچکدام</value>
+  </data>
+  <data name="OkButton.Text" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="OpenInEditorMenuItem.Text" xml:space="preserve">
+    <value>بازکردن در ویرایشگر متنی</value>
+  </data>
+  <data name="ProcessNameSuggestBox.Description" xml:space="preserve">
+    <value>نام فایل اجرایی را بدون پسوندش (.exe) وارد کنید.</value>
+  </data>
+  <data name="ProcessNameSuggestBox.Header" xml:space="preserve">
+    <value>نام پروسه:</value>
+  </data>
+  <data name="ReloadMenuItem.Text" xml:space="preserve">
+    <value>بارگذاری مجدد</value>
+  </data>
+  <data name="ReloadOnChangeSetting.Description" xml:space="preserve">
+    <value>بارگذاری مجدد فایل پیکربندی بصورت خودکار وقتی تغییر کرد.</value>
+  </data>
+  <data name="ReloadOnChangeSetting.Header" xml:space="preserve">
+    <value>بارگذاری مجدد هنگام تغییر</value>
+  </data>
+  <data name="RemoveRuleAppBarButton.Label" xml:space="preserve">
+    <value>حذف نمایه</value>
+  </data>
+  <data name="SettingsMenuItem.Text" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="SettingsTitle.Text" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="StartupSetting.Description" xml:space="preserve">
+    <value>اجرای خودکار برنامه هنگام شروع سیستم.</value>
+  </data>
+  <data name="StartupSetting.Header" xml:space="preserve">
+    <value>اجرا هنگام شروع سیستم</value>
+  </data>
+  <data name="SystemMenuItem.Text" xml:space="preserve">
+    <value>سیستم</value>
+  </data>
+  <data name="SystemTitlebarColorDescription.Text" xml:space="preserve">
+    <value>گزینه «سیستم» از طرح انتخابی شما در تنظیمات سیستم استفاده می‌کند.</value>
+  </data>
+  <data name="TabbedBackdropDescription.Text" xml:space="preserve">
+    <value>گزینه «Tabbed» از یک طرح بلور تصویر زمینه استفاده میکند.</value>
+  </data>
+  <data name="TabbedMenuItem.Text" xml:space="preserve">
+    <value>Tabbed</value>
+  </data>
+  <data name="TelegramButton.Content" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="TitlebarColorDescription.Text" xml:space="preserve">
+    <value>انتخاب طرح رنگ نوار عنوان،</value>
+  </data>
+  <data name="TitlebarColorMenu.Text" xml:space="preserve">
+    <value>رنگ نوار عنوان</value>
+  </data>
+  <data name="TitleBarColorSetting.Header" xml:space="preserve">
+    <value>رنگ نوار عنوان</value>
+  </data>
+  <data name="TrayIconTooltip.Content" xml:space="preserve">
+    <value>Mica برای همه</value>
+  </data>
+  <data name="TwitterButton.Content" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="UnhandledException.Header" xml:space="preserve">
+    <value>خطای غیرمنتظره</value>
+  </data>
+  <data name="UnhandledUIException.Header" xml:space="preserve">
+    <value>خطای غیرمنتظره در رابط کاربری</value>
+  </data>
+  <data name="UnsupportedBackdropDescription.Text" xml:space="preserve">
+    <value>گزینه‌های «Acrylic» و «Tabbed» حداقل Windows نسخه ۲۲۵۲۳ نیاز دارند.</value>
+  </data>
+  <data name="UnsupportedImmersiveDarkModeDescription.Text" xml:space="preserve">
+    <value>نوار عنوان تیره حداقل Windows نسخه ۱۹۰۴۱ نیاز دارد.</value>
+  </data>
+  <data name="UnsupportedMicaDescription.Text" xml:space="preserve">
+    <value>جلوه Mica حداقل Windows نسخه ۲۲۰۰۰ نیاز دارد.</value>
+  </data>
+  <data name="VersionLabel.Text" xml:space="preserve">
+    <value>نسخه</value>
+  </data>
+  <data name="AdvancedSetting.Header" xml:space="preserve">
+    <value>پیشرفته</value>
+  </data>
+  <data name="ConfigFileSetting.Header" xml:space="preserve">
+    <value>فایل پیکربندی</value>
+  </data>
+  <data name="StyleSetting.Header" xml:space="preserve">
+    <value>طرح</value>
+  </data>
+  <data name="OpenInEditorSetting.Description" xml:space="preserve">
+    <value>باز کردن فایل پیکربندی در ویرایشگر متنی پیشفرضتان</value>
+  </data>
+  <data name="OpenInEditorSetting.Header" xml:space="preserve">
+    <value>ویرایش در ویرایشگر متن</value>
+  </data>
+  <data name="ReloadSetting.Description" xml:space="preserve">
+    <value>بارگذاری مجدد نمایه‌ها از فایل پیکربندی و اعمال آن‌ها روی پنجره‌ها.</value>
+  </data>
+  <data name="ReloadSetting.Header" xml:space="preserve">
+    <value>بارگذاری مجدد</value>
+  </data>
+  <data name="ResetSetting.Description" xml:space="preserve">
+    <value>بازگردانی نمایه‌های پیشفرض و حذف تمام تغییرات.</value>
+  </data>
+  <data name="ResetSetting.Header" xml:space="preserve">
+    <value>بازنشانی</value>
+  </data>
+  <data name="Credit.Text" xml:space="preserve">
+    <value>ارائه شده توسط</value>
+  </data>
+  <data name="IconCredit.Text" xml:space="preserve">
+    <value>نماد برنامه توسط:</value>
+  </data>
+  <data name="TranslatorsCredit.Text" xml:space="preserve">
+    <value>ترجمه توسط:</value>
+  </data>
+  <data name="CornerMenu.Text" xml:space="preserve">
+    <value>حالت گوشه</value>
+  </data>
+  <data name="CornerPreferenceSetting.Header" xml:space="preserve">
+    <value>حالت گوشه</value>
+  </data>
+  <data name="SquareMenuItem.Text" xml:space="preserve">
+    <value>مستطیل</value>
+  </data>
+  <data name="RoundedMenuItem.Text" xml:space="preserve">
+    <value>گرد</value>
+  </data>
+  <data name="RoundedSmallMenuItem.Text" xml:space="preserve">
+    <value>کمی گرد</value>
+  </data>
+  <data name="CornerDescription.Text" xml:space="preserve">
+    <value>تنظیم گرد بودن گوشه پنجره‌ها،</value>
+  </data>
+  <data name="DefaultCornerDescription.Text" xml:space="preserve">
+    <value>گزینه «پیشفرض» تغییری ایجاد نمیکند تا از حالت ترجیحی برنامه برنامه استفاده شود.</value>
+  </data>
+  <data name="SquareCornerDescription.Text" xml:space="preserve">
+    <value>حالت «مستطیل» گوشه پنجره‌ها را تیز می‌کند.</value>
+  </data>
+  <data name="RoundedCornerDescription.Text" xml:space="preserve">
+    <value>حالت «گرد» گوشه پنجره‌ها را به اجبار گرد می‌کند.</value>
+  </data>
+  <data name="RoundedSmallCornerDescription.Text" xml:space="preserve">
+    <value>حالت «کمی گرد» گوشه پنجره‌ها را به اجبار کمی گرد می‌کند.</value>
+  </data>
+  <data name="AdminStartupSetting.Description" xml:space="preserve">
+    <value>اجرای این برنامه به عنوان مدیر به هنگام راه‌اندازی. برای فعالسازی این گزینه باید برنامه را به عنوان مدیر اجرا کنید.</value>
+  </data>
+  <data name="AdminStartupSetting.Header" xml:space="preserve">
+    <value>اجرا به عنوان مدیر هنگام راه‌اندازی</value>
+  </data>
+  <data name="ContributorsLabel.Text" xml:space="preserve">
+    <value>مشارکت کنندگان:</value>
+  </data>
+  <data name="TrayIconVisibilitySetting.Description" xml:space="preserve">
+    <value>نمایش نماد برنامه در ناحیه اعلان‌ها در نوار وظیفه.</value>
+  </data>
+  <data name="TrayIconVisibilitySetting.Header" xml:space="preserve">
+    <value>نمایش نماد برنامه در ناحیه اعلان‌ها</value>
+  </data>
+</root>

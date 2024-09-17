@@ -1,0 +1,98 @@
+;=============================================================================;
+; File:               SpTpSvc64.inf                                           ;
+;                                                                             ;
+; Description:   Driver Service for SIPO Touchpad Controller                  ;
+;                                                                             ;
+; Copyright (C) 2020 SIPO  All Rights Reserved.                               ;
+;=============================================================================;
+
+[Version]
+Signature = "$Windows NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider = %SpTpSvcMFR%
+CatalogFile = SpPort64.cat
+DriverVer = 05/27/2020, 2.7.1.0
+
+[Manufacturer]
+%SpTpSvcMFR% = SpPort64, NTx86, NTamd64
+
+[SpPort64.NTx86]
+%SpPortName% = Port.NTx86, ACPI\WBTK0001
+
+[SpPort64.NTamd64]
+%SpPortName% = Port.NTamd64, ACPI\WBTK0001
+
+[SourceDisksNames]
+1 = %SpPortName%
+
+[DestinationDirs]
+DefaultDestDir = 12
+Port.CopyDriver.NTx86 = 12
+Port.CopyDriver.NTamd64 = 12
+Port.CopyDriver.Svc.NTamd64=11
+
+[SourceDisksFiles.x86]
+SpPort64.sys = 1
+SpTpSvc.exe = 1
+
+[SourceDisksFiles.amd64]
+SpPort64.sys = 1
+SpTpSvc.exe = 1
+
+[Port.NTx86]
+CopyFiles = Port.CopyDriver.NTx86
+
+[Port.NTamd64]
+CopyFiles = Port.CopyDriver.NTamd64
+CopyFiles = Port.CopyDriver.Svc.NTamd64
+
+[Port.CopyDriver.NTx86]
+SpTpSvc.exe
+
+[Port.CopyDriver.NTamd64]
+SpPort64.sys
+
+[Port.CopyDriver.Svc.NTamd64]
+SpTpSvc.exe
+
+[Port.NTx86.Services]
+AddService = SpPort64, 0x00000002 , PORT_Service_Inst_NTx86
+
+[Port.NTamd64.Services]
+AddService = SpPort64, 0x00000002, PORT_Service_Inst_NTamd64
+AddService = SipoTpSvc,, PORT_Service_Inst_SVC
+
+[PORT_Service_Inst_NTx86]
+DisplayName = %SpPortName%
+Description = %SpPortDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\SpPort64.sys
+
+[PORT_Service_Inst_NTamd64]
+DisplayName = %SpPortName%
+Description = %SpPortDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\SpPort64.sys
+
+[PORT_Service_Inst_SVC]
+DisplayName = %SpTpSvcName%
+Description = %SpTpSvcDesc%
+ServiceType    = 0x10               ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %11%\SpTpSvc.exe
+AddReg = Service_AddReg
+
+[Service_AddReg]
+
+[Strings]
+SpTpSvcMFR     = "SIPO Technology Development co, Ltd."
+SpPortName     = "SIPO Port Device"
+SpPortDesc     = "SIPO Port Service"
+SpTpSvcName    = "SIPO Touchpad Controller Service"
+SpTpSvcDesc    = "SIPO Touchpad Controller"

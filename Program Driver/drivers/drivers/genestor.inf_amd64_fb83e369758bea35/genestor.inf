@@ -1,0 +1,331 @@
+;/*++
+;
+;Copyright (c) Genesys Logic Corporation.  All rights reserved.
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;Module Name:
+;
+;    GeneStor.INF
+;
+;Abstract:
+;    Installation inf
+;
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = USB
+ClassGUID = {36FC9E60-C465-11CF-8056-444553540000}
+provider = %GL%
+DriverVer = 07/15/2019,4.5.4.2
+CatalogFile = GeneStor64.cat
+
+[Manufacturer]
+%MfgName% = Genesys, NTamd64
+
+[Genesys.NTamd64]
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0716
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0722
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0727
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0729
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0745
+%GL_USB_STORAGE_2% = GeneStor.Dev, USB\VID_05E3&PID_0761
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0732
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0738
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0743
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0746
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0747
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0748
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0749
+%GL_USB_STORAGE_3% = GeneStor.Dev, USB\VID_05E3&PID_0754
+
+[DestinationDirs]
+GeneStor.CopyDllList_x86 = 10,System32
+GeneStor.CopyDllList_amd64 = 10,SysWOW64
+GeneStor.CopySys = 12
+
+[GeneStor.Dev.NTamd64]
+CopyFiles = GeneStor.CopySys, GeneStor.CopyDllList_amd64 
+AddReg = GeneStor.Dev.NTamd64.AddReg
+
+[GeneStor.Dev.NTx86]
+CopyFiles = GeneStor.CopySys, GeneStor.CopyDllList_x86 
+AddReg = GeneStor.Dev.NTx86.AddReg
+
+[GeneStor.Dev.NTamd64.AddReg]
+HKR,, DriverFlags, 0x00010001, 0x00000001
+
+[GeneStor.Dev.NTamd64.Services]
+AddService = GeneStor, 0x00000002, GeneStor_Install, GeneStor.EventLogging
+
+[GeneStor.Dev.NTamd64.HW]
+AddReg = GeneStor_Parameters
+
+[GeneStor.Dev.NTamd64.Wdf]
+KmdfService = GeneStor, GeneStor_wdfsect
+
+[GeneStor_Install]
+DisplayName = %GeneStor.SvcDesc%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\GeneStor.sys
+AddReg = GeneStor_InternalDevice
+
+[GeneStor.CopySys]
+GeneStor.sys
+
+[GeneStor.CopyDllList_amd64]
+GLCRIcon.dll
+
+[GeneStor.EventLogging]
+AddReg=GeneStor_EventLogAddReg
+
+[GeneStor_EventLogAddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\GeneStor.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[GeneStor_InternalDevice]
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0716\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0722\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0727\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0729\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0732\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0738\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0743\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0745\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0746\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0747\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0748\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0749\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0754\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\USB#VID_05E3&PID_0761\LocationPaths\*, Removable, 0x00010001, 0x00
+
+[GeneStor_Parameters]
+HKR, GL826, CacheFunction, 0x00010001, 0
+HKR, GL826, ChangeIcon, 0x00010001, 1
+HKR, GL826, CombineModeMaxChain, 0x00010001, 1
+HKR, GL826, DynamicDisk, 0x00010001, 1
+HKR, GL826, RemoteWakeupHost, 0x00010001, 0
+HKR, GL826, SeparateRemove, 0x00010001, 1
+HKR, GL826, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL826, SuspendTimer, 0x00010001, 0
+HKR, GL826, WriteProtect, 0x00010001, 0
+HKR, GL826, SupportD3Idle, 0x00010001, 0
+HKR, GL826, DisableMMC, 0x00010001, 0
+HKR, GL826, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL826, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL827, CacheFunction, 0x00010001, 0
+HKR, GL827, ChangeIcon, 0x00010001, 1
+HKR, GL827, CombineModeMaxChain, 0x00010001, 1
+HKR, GL827, DynamicDisk, 0x00010001, 1
+HKR, GL827, RemoteWakeupHost, 0x00010001, 0
+HKR, GL827, SeparateRemove, 0x00010001, 1
+HKR, GL827, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL827, SuspendTimer, 0x00010001, 0
+HKR, GL827, WriteProtect, 0x00010001, 0
+HKR, GL827, SupportD3Idle, 0x00010001, 0
+HKR, GL827, DisableMMC, 0x00010001, 0
+HKR, GL827, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL827, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL827S, CacheFunction, 0x00010001, 0
+HKR, GL827S, ChangeIcon, 0x00010001, 1
+HKR, GL827S, CombineModeMaxChain, 0x00010001, 1
+HKR, GL827S, DynamicDisk, 0x00010001, 1
+HKR, GL827S, RemoteWakeupHost, 0x00010001, 0
+HKR, GL827S, SeparateRemove, 0x00010001, 1
+HKR, GL827S, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL827S, SuspendTimer, 0x00010001, 0
+HKR, GL827S, WriteProtect, 0x00010001, 0
+HKR, GL827S, SupportD3Idle, 0x00010001, 0
+HKR, GL827S, DisableMMC, 0x00010001, 0
+HKR, GL827S, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL827S, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL839, CacheFunction, 0x00010001, 0
+HKR, GL839, ChangeIcon, 0x00010001, 1
+HKR, GL839, CombineModeMaxChain, 0x00010001, 1
+HKR, GL839, DynamicDisk, 0x00010001, 1
+HKR, GL839, RemoteWakeupHost, 0x00010001, 0
+HKR, GL839, SeparateRemove, 0x00010001, 1
+HKR, GL839, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL839, SuspendTimer, 0x00010001, 0
+HKR, GL839, WriteProtect, 0x00010001, 0
+HKR, GL839, SupportD3Idle, 0x00010001, 0
+HKR, GL839, DisableMMC, 0x00010001, 0
+HKR, GL839, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL839, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL823, CacheFunction, 0x00010001, 0
+HKR, GL823, ChangeIcon, 0x00010001, 1
+HKR, GL823, CombineModeMaxChain, 0x00010001, 0
+HKR, GL823, DynamicDisk, 0x00010001, 1
+HKR, GL823, RemoteWakeupHost, 0x00010001, 0
+HKR, GL823, SeparateRemove, 0x00010001, 1
+HKR, GL823, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL823, SuspendTimer, 0x00010001, 0
+HKR, GL823, WriteProtect, 0x00010001, 0
+HKR, GL823, SupportD3Idle, 0x00010001, 0
+HKR, GL823, DisableMMC, 0x00010001, 0
+HKR, GL823, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL823, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL834L, CacheFunction, 0x00010001, 0
+HKR, GL834L, ChangeIcon, 0x00010001, 1
+HKR, GL834L, CombineModeMaxChain, 0x00010001, 1
+HKR, GL834L, DynamicDisk, 0x00010001, 1
+HKR, GL834L, RemoteWakeupHost, 0x00010001, 0
+HKR, GL834L, SeparateRemove, 0x00010001, 1
+HKR, GL834L, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL834L, SuspendTimer, 0x00010001, 3
+HKR, GL834L, WriteProtect, 0x00010001, 0
+HKR, GL834L, SupportD3Idle, 0x00010001, 0
+HKR, GL834L, DisableMMC, 0x00010001, 0
+HKR, GL834L, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL834L, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL835, CacheFunction, 0x00010001, 0
+HKR, GL835, ChangeIcon, 0x00010001, 1
+HKR, GL835, CombineModeMaxChain, 0x00010001, 1
+HKR, GL835, DynamicDisk, 0x00010001, 1
+HKR, GL835, RemoteWakeupHost, 0x00010001, 0
+HKR, GL835, SeparateRemove, 0x00010001, 1
+HKR, GL835, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL835, SuspendTimer, 0x00010001, 4
+HKR, GL835, WriteProtect, 0x00010001, 0
+HKR, GL835, SupportD3Idle, 0x00010001, 0
+HKR, GL835, DisableMMC, 0x00010001, 0
+HKR, GL835, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL835, UsbMaxTransferSize, 0x00010001, 0x400000
+HKR, GL835, DisableSamsungMMCPatch, 0x00010001, 1
+HKR, GL835, EnableSSC, 0x00010001, 1
+
+HKR, GL3220, CacheFunction, 0x00010001, 0
+HKR, GL3220, ChangeIcon, 0x00010001, 1
+HKR, GL3220, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3220, DynamicDisk, 0x00010001, 1
+HKR, GL3220, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3220, SeparateRemove, 0x00010001, 1
+HKR, GL3220, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3220, SuspendTimer, 0x00010001, 0
+HKR, GL3220, WriteProtect, 0x00010001, 0
+HKR, GL3220, SupportD3Idle, 0x00010001, 0
+HKR, GL3220, DisableMMC, 0x00010001, 0
+HKR, GL3220, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3220, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL3221, CacheFunction, 0x00010001, 0
+HKR, GL3221, ChangeIcon, 0x00010001, 1
+HKR, GL3221, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3221, DynamicDisk, 0x00010001, 1
+HKR, GL3221, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3221, SeparateRemove, 0x00010001, 1
+HKR, GL3221, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3221, SuspendTimer, 0x00010001, 0
+HKR, GL3221, WriteProtect, 0x00010001, 0
+HKR, GL3221, SupportD3Idle, 0x00010001, 0
+HKR, GL3221, DisableMMC, 0x00010001, 0
+HKR, GL3221, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3221, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL3215, CacheFunction, 0x00010001, 0
+HKR, GL3215, ChangeIcon, 0x00010001, 1
+HKR, GL3215, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3215, DynamicDisk, 0x00010001, 1
+HKR, GL3215, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3215, SeparateRemove, 0x00010001, 1
+HKR, GL3215, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3215, SuspendTimer, 0x00010001, 1
+HKR, GL3215, WriteProtect, 0x00010001, 0
+HKR, GL3215, SupportD3Idle, 0x00010001, 0
+HKR, GL3215, DisableMMC, 0x00010001, 0
+HKR, GL3215, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3215, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL3213, CacheFunction, 0x00010001, 0
+HKR, GL3213, ChangeIcon, 0x00010001, 1
+HKR, GL3213, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3213, DynamicDisk, 0x00010001, 1
+HKR, GL3213, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3213, SeparateRemove, 0x00010001, 1
+HKR, GL3213, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3213, SuspendTimer, 0x00010001, 1
+HKR, GL3213, WriteProtect, 0x00010001, 0
+HKR, GL3213, SupportD3Idle, 0x00010001, 0
+HKR, GL3213, DisableMMC, 0x00010001, 0
+HKR, GL3213, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3213, UsbMaxTransferSize, 0x00010001, 0x400000
+HKR, GL3213, DisableU1U2, 0x00010001, 1
+HKR, GL3213, EnableSSC, 0x00010001, 1
+HKR, GL3213, USB3TS1Control, 0x00010001, 1
+HKR, GL3213, ModifyDAC, 0x00010001, 1
+HKR, GL3213, EnableResetPLL, 0x00010001, 1
+HKR, GL3213, OverCurrentDetect, 0x00010001, 0
+
+HKR, GL3223, CacheFunction, 0x00010001, 0
+HKR, GL3223, ChangeIcon, 0x00010001, 1
+HKR, GL3223, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3223, DynamicDisk, 0x00010001, 1
+HKR, GL3223, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3223, SeparateRemove, 0x00010001, 1
+HKR, GL3223, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3223, SuspendTimer, 0x00010001, 0
+HKR, GL3223, WriteProtect, 0x00010001, 0
+HKR, GL3223, SupportD3Idle, 0x00010001, 0
+HKR, GL3223, DisableMMC, 0x00010001, 0
+HKR, GL3223, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3223, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL3233, CacheFunction, 0x00010001, 0
+HKR, GL3233, ChangeIcon, 0x00010001, 1
+HKR, GL3233, CombineModeMaxChain, 0x00010001, 0
+HKR, GL3233, DynamicDisk, 0x00010001, 1
+HKR, GL3233, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3233, SeparateRemove, 0x00010001, 1
+HKR, GL3233, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3233, SuspendTimer, 0x00010001, 1
+HKR, GL3233, WriteProtect, 0x00010001, 0
+HKR, GL3233, SupportD3Idle, 0x00010001, 0
+HKR, GL3233, DisableMMC, 0x00010001, 0
+HKR, GL3233, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3233, UsbMaxTransferSize, 0x00010001, 0x400000
+
+HKR, GL3225, CacheFunction, 0x00010001, 0
+HKR, GL3225, ChangeIcon, 0x00010001, 1
+HKR, GL3225, CombineModeMaxChain, 0x00010001, 1
+HKR, GL3225, DynamicDisk, 0x00010001, 1
+HKR, GL3225, RemoteWakeupHost, 0x00010001, 0
+HKR, GL3225, SeparateRemove, 0x00010001, 1
+HKR, GL3225, SurpriseRemovalOK, 0x00010001, 1
+HKR, GL3225, SuspendTimer, 0x00010001, 1
+HKR, GL3225, WriteProtect, 0x00010001, 0
+HKR, GL3225, SupportD3Idle, 0x00010001, 0
+HKR, GL3225, DisableMMC, 0x00010001, 0
+HKR, GL3225, ScsiMaxTransferSize, 0x00010001, 0x100000
+HKR, GL3225, UsbMaxTransferSize, 0x00010001, 0x400000
+
+[GeneStor_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+[SourceDisksFiles]
+GeneStor.sys = 1
+GLCRIcon.dll = 1
+
+[Strings]
+GL = "Genesys Logic"
+MfgName = "Genesys Logic"
+GLUserSvcName = "Genesys Logic Service"
+DiskName = "USB Storage Device Driver Disk"
+GL_USB_STORAGE = "USB Mass Storage Device"
+GL_USB_STORAGE_2 = "Genesys Logic USB2.0 Card Reader"
+GL_USB_STORAGE_3 = "Genesys Logic USB3.0 Card Reader"
+GeneStor.SvcDesc = "Genesys Logic Storage Driver"

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>MicaForEveryone</RootNamespace>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+        <Platforms>AnyCPU;x86;x64</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\Properties\AssemblyVersion.cs" Link="Properties\AssemblyVersion.cs" />
+    </ItemGroup>
+
+</Project>

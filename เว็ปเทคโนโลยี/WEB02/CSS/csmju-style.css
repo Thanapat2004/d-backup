@@ -1,0 +1,27 @@
+p{
+    color: darkgrey;
+    text-align: right;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 5px;
+}
+p:hover{
+    text-decoration: underline;
+    font-size: 1.56em;
+}
+
+.menu{
+    color: rgb(255, 0, 64);
+    text-decoration: underline;
+}
+div{
+
+    width: 100px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    border-color: #d30e7a;
+    border-style: solid;
+    padding: 10px 20px;
+    margin: 5px 15px;
+    align-content: end;
+    
+}

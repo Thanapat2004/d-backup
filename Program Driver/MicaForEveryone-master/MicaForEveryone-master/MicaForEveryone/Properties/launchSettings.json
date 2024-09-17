@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MicaForEveryone": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    },
+    "Uninstall Task": {
+      "commandName": "Project",
+      "commandLineArgs": "--uninstall",
+      "nativeDebugging": true
+    }
+  }
+}
